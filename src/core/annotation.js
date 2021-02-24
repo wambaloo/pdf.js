@@ -596,9 +596,13 @@ class WidgetAnnotation extends Annotation {
     data.readOnly = this.hasFieldFlag(AnnotationFieldFlag.READONLY);
 
     // Hide signatures because we cannot validate them.
-    if (data.fieldType === 'Sig') {
+    /**
+     * BOONDMANAGER : on affiche malgré tout les signatures car nous n'avons
+     * aucune raison de les masquer et de vérifier leur authenticité
+     */
+    /*if (data.fieldType === 'Sig') {
       this.setFlags(AnnotationFlag.HIDDEN);
-    }
+    }*/
   }
 
   /**
